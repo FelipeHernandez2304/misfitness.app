@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private ViewFlipper vf;
@@ -46,6 +48,32 @@ public class MainActivity extends AppCompatActivity {
           Intent i = new Intent(this,Maps_act.class);
           startActivity(i);
       }
+
+      public void Info(View v)
+      {
+          Intent i = new Intent(this, Info_act.class);
+          startActivity(i);
+      }
+
+      public void Clientes(View v)
+      {
+
+          ArrayList<String> clientes = new ArrayList<String>();
+          ArrayList<String> planes = new ArrayList<String>();
+          clientes.add("Roberto");
+          clientes.add("Ivan");
+          clientes.add("Felipe");
+          planes.add("extrem");
+          planes.add("mindfullness");
+          planes.add("basico");
+
+
+          Intent i = new Intent(this, Clientes_act.class);
+          i.putExtra("listaClientes", clientes);
+          i.putExtra("listaPlanes", planes);
+          startActivity(i);
+      }
+
 
 
 }
